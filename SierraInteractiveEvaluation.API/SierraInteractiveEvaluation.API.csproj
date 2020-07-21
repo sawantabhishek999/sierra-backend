@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SierraInteractiveEvaluation.Data\SierraInteractiveEvaluation.Services.csproj" />
     <ProjectReference Include="..\SierraInteractiveEvaluation.Models\SierraInteractiveEvaluation.Models.csproj" />
+    <ProjectReference Include="..\SierraInteractiveEvaluation.Services\SierraInteractiveEvaluation.Services.csproj" />
     <ProjectReference Include="..\SierraInteractiveEvaluation.Utilities\SierraInteractiveEvaluation.Utilities.csproj" />
   </ItemGroup>
 

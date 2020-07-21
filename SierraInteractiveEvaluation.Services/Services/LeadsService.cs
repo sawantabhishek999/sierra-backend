@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using static SierraInteractiveEvaluation.Models.Enums;
 
@@ -73,9 +74,21 @@ namespace SierraInteractiveEvaluation.Services
                 {
                     lstValidationMsg.Add("Last name is required.");
                 }
+                if (string.IsNullOrEmpty(leadObj.Email))
+                {
+                    lstValidationMsg.Add("Email is required.");
+                }
+                if (string.IsNullOrEmpty(leadObj.Phone))
+                {
+                    lstValidationMsg.Add("Phone is required.");
+                }
                 if (string.IsNullOrEmpty(leadObj.Password))
                 {
                     lstValidationMsg.Add("Password is required.");
+                }
+                if (!Extensions.IsValidEmail(leadObj.Email))
+                {
+                    lstValidationMsg.Add("Email is invalid.");
                 }
                 if (!Enum.IsDefined(typeof(LeadTypeEnum), leadObj.LeadType))
                 {
